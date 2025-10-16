@@ -39,12 +39,11 @@ colnames(activities_clean)
 # The first column is the "activity_type" and the other one is the "title".
 # The column title includes relevant information for running activities, 
 # specifically the city in which I ran.
-# So, I will attempt to extract that data from that column.
-
-# One that contains the activity_name and another called city so that I can keep
-# track of my runns per city :).
-# It also seems I haven't highlighted any of the activites as my favorite, then
-# I will remove this column too
+# So, I will create a new column named specific_info so that I can have just enough
+# details of each activity.
+# I haven't highlighted any of the activities as my favorite, then I will remove this column
+# Additionally, I will split the date column in date and time, and afterwards I will split
+# date into month, day, and year, without removing the full date column
 
 # Check unique values for activity type
 unique(activities_clean$activity_type)
