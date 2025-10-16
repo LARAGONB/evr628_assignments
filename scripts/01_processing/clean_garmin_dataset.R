@@ -37,22 +37,43 @@ colnames(activities_clean)
 # running the clean_names function. 
 # I did notice that there are two columns associated with the activity's name
 # The first column is the "activity_type" and the other one is the "title".
-# I like that the title one has shorter names for the activities, 
-# but it includes relevant information for my running activities, 
+# The column title includes relevant information for running activities, 
 # specifically the city in which I ran.
-# So, I will keep just "title", but I will split this one in two columns:
+# So, I will attempt to extract that data from that column.
+
 # One that contains the activity_name and another called city so that I can keep
 # track of my runns per city :).
 # It also seems I haven't highlighted any of the activites as my favorite, then
 # I will remove this column too
 
-activities_clean |> 
-  select(title) |> 
-  unique(activities_clean$activity_type)
+# Check unique values for activity type
+unique(activities_clean$activity_type)
 
-activites_clean2 <- activities_clean |> 
-  select(-c(activity_type, favorite)) |> 
-  relocate(title, .before = everything()) 
+# Check unique values for title
+unique(activities_clean$title)
+
+
+activities_clean2 <- activities_clean |> 
+  separate_wider_delim(title, delim = " ",
+                       names = c("a", "b", "c"),
+                       too_few = "align_start",
+                       too_many = "merge") |> 
+  mutate(
+    b = case_when(
+      b %in% c("Cycling", "Hiking", "-", "Running", "and", "101") ~ NA,
+      TRUE ~ b),
+    c = case_when(
+      c %in% c("Hiking", "Running", "Walking") ~ NA,
+      TRUE ~ c)) |> 
+  unite("specific_info",
+        a:b,
+        na.rm = TRUE) |>
+  select(!c(c,favorite)) |> 
+  separate_wider_delim(date, delim = " ",
+                       names = c("date", "start_time")) |> 
+  separate_wider_delim(date, delim = "/",
+                       names = c("month", "day", "year"), cols_remove = FALSE) |> 
+  relocate(date, .before = month)
 
 
 
