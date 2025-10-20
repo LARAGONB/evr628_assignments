@@ -361,7 +361,7 @@ Scientists) from the University of Miami. Here, I will upload my unique
 solutions for the assignments Dr. Juan Carlos Villaseñor-Derbez (JC)
 designed.</p>
 <div id="first-assignment" class="section level2">
-<h2>First assignment</h2>
+<h2><strong>First assignment</strong></h2>
 <p>The first assignment was to create this repository. So, Voila :)
 !!</p>
 <p>When creating the project, I used the “EVR628tools” package designed
@@ -392,7 +392,7 @@ code to create this structure</li>
 .qmd file showing the few steps I took for the first assignment.</p>
 </div>
 <div id="second-assignment" class="section level2">
-<h2>Second assignment</h2>
+<h2><strong>Second assignment</strong></h2>
 <p>The second assignment is a bit more fun and interesting than the
 first one. For this one, we should find a messy dataset and shape it so
 that we are ready to analyze data and make figures.</p>
@@ -400,10 +400,86 @@ that we are ready to analyze data and make figures.</p>
 I have been working a lot analyzing pretty awesome data, so taking a
 break from that sounded like a great idea. Inspired by one of
 Dr. Villaseñor-Derbez’s suggestions, I decided to download the data my
-Garmin Venu 3S has been collecting since May 9, 2025.</p>
+Garmin Venu 3S has been collecting since May 9, 2025. You can find what
+I did in this <a href="scripts/01_processing/clean_garmin_dataset.R">script</a>.</p>
+<div id="about-the-data" class="section level3">
+<h3><strong>About the data</strong></h3>
+<p><strong><em><a href="data/processed/garmin_processed.rds">data/processed/garmin_processed.rds</a>
+contains 194 activities (rows) and 42 columns. I won’t describe the 42
+columns, so below are the ones I think will be useful for future
+analyses.</em></strong></p>
+<ul>
+<li><code>activity_type</code> - Character - A unique identifier for
+each type of activity (i.e., Strenght training, HIIT, Running, among
+others)</li>
+<li><code>date</code> - Character - A unique identifier for each
+activity’s date and time</li>
+<li><code>month</code> - Character - The month in which the activity
+happened</li>
+<li><code>day</code> - Character - The day in which the activity
+happened</li>
+<li><code>year</code> - Character - The year in which the activity
+happened</li>
+<li><code>star_time</code> - Character - Time of day the activity
+started</li>
+<li><code>specific_info</code> - Character - A unique identifier for
+specific information regarding the activity (i.e., place
+(Coral_Gables))</li>
+<li><code>distance</code> - Numerical - A distance metric for activities
+like running, walking and hiking</li>
+<li><code>distance</code> - Numerical - The calories burned during the
+activity</li>
+<li><code>time</code> - Time - The time I spent doing each activity</li>
+<li><code>avg_hr</code> - Numerical - Average HR during the
+activity</li>
+<li><code>max_hr</code> - Numerical - Maximum HR during the
+activity</li>
+<li><code>avg_hr</code> - Numerical - Average HR during the
+activity</li>
+<li><code>avg_speed</code> - Numerical - Average speed during the
+activity</li>
+<li><code>max_speed</code> - Numerical - Average speed during the
+activity</li>
+<li><code>total_ascent</code> - Numerical - Total ascent during the
+activity</li>
+<li><code>total_descent</code> - Numerical - Total descent during the
+activity</li>
+<li><code>avg_stride_length</code> - Numerical - Average stride during
+the activity</li>
+<li><code>avg_vertical_ratio</code> - Numerical - Average vertical ratio
+during the activity</li>
+<li><code>avg_vertical_oscillation</code> - Numerical - Average vertical
+oscillation during the activity</li>
+<li><code>avg__length</code> - Numerical - Average stride during the
+activity</li>
+<li><code>avg__ground_contact_time</code> - Numerical - Average ground
+contact time during the activity</li>
+<li><code>avg__power</code> - Numerical - Average power during the
+activity</li>
+<li><code>max__power</code> - Numerical - Max power during the
+activity</li>
+<li><code>steps</code> - Numerical - Steps taken during the
+activity</li>
+<li><code>total_reps</code> - Numerical - Total repetitions during the
+activity</li>
+<li><code>total_sets</code> - Numerical - Total sets during the
+activity</li>
+<li><code>body_battery_drain</code> - Numerical - How much the activity
+drained my energy</li>
+<li><code>best_lap_time</code> - Time - Best lap during the
+activity</li>
+<li><code>number_of_laps</code> - Numerical - Number of laps during the
+activity</li>
+<li><code>moving_time</code> - Time - Amount of time I move during the
+activity</li>
+<li><code>elapsed_time</code> - Time - Elapsed time during the
+activity</li>
+<li><code>min_elevation</code> - Numerical - Min elevation during the
+activity</li>
+<li><code>max_elevation</code> - Numerical - Max elevation during the
+activity</li>
+</ul>
 </div>
-<div id="section" class="section level2">
-<h2></h2>
 </div>
 </div>
 
