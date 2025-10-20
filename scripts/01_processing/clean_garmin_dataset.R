@@ -44,6 +44,8 @@ colnames(activities_clean)
 # I haven't highlighted any of the activities as my favorite, then I will remove this column
 # Additionally, I will split the date column in date and time, and afterwards I will split
 # date into month, day, and year, without removing the full date column
+# I also notices that columns that should be numerical (dbl) were recovered as characters. Therefore,
+# I converted them to numeric columns
 
 # Check unique values for activity type
 unique(activities_clean$activity_type)
@@ -72,7 +74,11 @@ activities_clean2 <- activities_clean |>
                        names = c("date", "start_time")) |> 
   separate_wider_delim(date, delim = "/",
                        names = c("month", "day", "year"), cols_remove = FALSE) |> 
-  relocate(date, .before = month)
+  relocate(date, .before = month) |> 
+  mutate(across(c(distance:max_elevation, -contains(c("time", "decompression"))), as.numeric)) |> 
+  mutate(avg_ground_contact_time = as.numeric(avg_ground_contact_time))
 
+
+write_rds(activities_clean2, "data/processed/garmin_processed.rds")
 
 
