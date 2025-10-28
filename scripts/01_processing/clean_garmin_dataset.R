@@ -11,7 +11,7 @@
 ################################################################################  
 
 # 1. Load packages ----
-pkgs <- c("tidyverse", "janitor")
+pkgs <- c("tidyverse", "janitor", "lubridate")
 lapply(pkgs, library, character.only = TRUE)
 rm(pkgs)
 
@@ -72,9 +72,11 @@ activities_clean2 <- activities_clean |>
   select(!c(c,favorite)) |> 
   separate_wider_delim(date, delim = " ",
                        names = c("date", "start_time")) |> 
-  separate_wider_delim(date, delim = "/",
-                       names = c("month", "day", "year"), cols_remove = FALSE) |> 
-  relocate(date, .before = month) |> 
+  mutate(date = mdy(date),
+         start_time = hm(start_time),
+         month = month(date),
+         month_abbr = month(date, label = TRUE),
+         day = day(date), .after = start_time) |> 
   mutate(across(c(distance:max_elevation, -contains(c("time", "decompression"))), as.numeric)) |> 
   mutate(avg_ground_contact_time = as.numeric(avg_ground_contact_time))
 
