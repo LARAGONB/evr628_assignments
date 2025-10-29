@@ -16,7 +16,7 @@ lapply(pkgs, library, character.only = TRUE)
 rm(pkgs)
 
 # 2. Upload data ----
-activities <- read_csv("data/raw/activities_garmin.csv")
+activities <- read_csv("data/raw/activities_garmin_20251028.csv")
 head(activities)
 
 # 3. Clean data ----
@@ -43,7 +43,7 @@ colnames(activities_clean)
 # details of each activity.
 # I haven't highlighted any of the activities as my favorite, then I will remove this column
 # Additionally, I will split the date column in date and time, and afterwards I will split
-# date into month, day, and year, without removing the full date column
+# date into month, day, and year, using the function from the lubridate package.
 # I also notices that columns that should be numerical (dbl) were recovered as characters. Therefore,
 # I converted them to numeric columns
 
@@ -81,6 +81,6 @@ activities_clean2 <- activities_clean |>
   mutate(avg_ground_contact_time = as.numeric(avg_ground_contact_time))
 
 
-write_rds(activities_clean2, "data/processed/garmin_processed.rds")
+write_rds(activities_clean2, "data/processed/garmin_processed_20251028.rds")
 
 
