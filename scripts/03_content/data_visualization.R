@@ -185,7 +185,7 @@ ggsave("results/img/maxhr_hik_run_20251028.png", maxhr_hik_run,
        width = 6, height = 5, dpi = 300)
 
 
-## e. Create combined plot
+## e. Create combined plot ----
 
 colplot_hik_run_wl <- colplot_hik_run + theme(legend.position = "none",
                                               plot.caption = element_blank())
