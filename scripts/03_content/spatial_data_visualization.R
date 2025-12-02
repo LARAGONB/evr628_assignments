@@ -54,16 +54,16 @@ full_table_country <- st_join(countries, run_hik_sf, join = st_contains, left = 
 full_table_states <- st_join(states, run_hik_sf, join = st_contains, left = FALSE)
 
 ### Calculate number of activities per state
-activities_number <- full_table_states |> 
+activities_number <- full_table_country |> 
   group_by(name) |> 
   summarise(n_activities = n())
 
-running_number <- full_table_states |> 
+running_number <- full_table_country |> 
   filter(activity_type %in% "Running") |> 
   group_by(name) |> 
   summarise(n_activities = n())
 
-hiking_number <- full_table_states |> 
+hiking_number <- full_table_country |> 
   filter(activity_type %in% "Hiking") |> 
   group_by(name) |> 
   summarise(n_activities = n())
@@ -105,7 +105,7 @@ run_hik_plot <- ggplot() +
   annotation_north_arrow(pad_x = unit(0.6, "cm"), pad_y = unit(0.8, "cm")) +
   annotation_scale(location = "bl")
 
-ggsave("results/img/run_hik_plots_20251028.png", run_hik_plot,
+ggsave("results/img/run_hik_plots_20251028_country.png", run_hik_plot,
        width = 10, height = 5, dpi = 300)
 
 ### Plot Running activities ----
@@ -129,7 +129,7 @@ run_plot <- ggplot() +
   annotation_north_arrow(pad_x = unit(0.6, "cm"), pad_y = unit(0.8, "cm")) +
   annotation_scale(location = "bl")
 
-ggsave("results/img/run_plots_20251028.png", run_plot,
+ggsave("results/img/run_plots_20251028_country.png", run_plot,
        width = 10, height = 5, dpi = 300)
 
 
@@ -154,5 +154,5 @@ hik_plot <-ggplot() +
   annotation_north_arrow(pad_x = unit(0.6, "cm"), pad_y = unit(0.8, "cm")) +
   annotation_scale(location = "bl")
 
-ggsave("results/img/hik_plots_20251028.png", hik_plot,
+ggsave("results/img/hik_plots_20251028_country.png", hik_plot,
        width = 10, height = 5, dpi = 300)

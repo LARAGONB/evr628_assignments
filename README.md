@@ -36,7 +36,7 @@ I wanted to do something unrelated to my plant ecologist science hat. I have bee
 
 ### **About the data**
 
-[***data/processed/garmin_processed.rds***](data/processed/garmin_processed.rds) ***contains 194 activities (rows) and 45 columns. I won't describe the 42 columns, so below are the ones I think will be useful for future analyses.***
+[***data/processed/garmin_processed.rds***](data/processed/garmin_processed.rds) ***contains 205 activities (rows) and 45 columns. I won't describe the 42 columns, so below are the ones I think will be useful for future analyses.***
 
 -   `activity_type` - Character - A unique identifier for each type of activity (i.e., Strenght training, HIIT, Running, among others)
 -   `date` - Date - A unique identifier for each activity's date and time
@@ -88,7 +88,11 @@ Here is my visualization: ![figure2](results/img/combined_plot_20251028.png)
 
 For this assignment, Dr. JC encouraged us to visualize our data spatially. I didn't think this was possible for my data given that I didn't have coordinates from it. However, in the specific information column I have kept since the beginning the location of my Running and Hiking activites was saved. 
 
-Using a geocode approach, I first obtain the coordinates for each of my running and hiking activites. Then, I decided to map them per state to try to visualize where in the world I have been doing more running and/or hiking.
+Using a geocode approach, I first obtain the coordinates for each of my running and hiking activities. Then, I decided to map them per state to try to visualize where in the world I have been doing more running and/or hiking.
 
-Here is the total number of both running and hiking activities I have recorded with my watch aroung the Americas ![figure3](results/img/run_hik_plots_20251028.png)
+Here is the total number of both running and hiking activities I have recorded with my watch around the Americas ![figure3](results/img/run_hik_plots_20251028.png)
 And also, the total number of running ![figure4](results/img/run_plots_20251028.png) and hiking activities ![figure5](results/img/hik_plots_20251028.png)
+
+## **Final assignment**
+
+The final step was to create an awesome presentation using Quarto. Here(https://jcvdav.github.io/EVR_628/) is mine. 
