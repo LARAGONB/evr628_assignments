@@ -99,7 +99,7 @@ Finally, I wanted to compare my average and maximum heart rate while doing diffe
 
 ![](results/img/heart_rate_plots_20251028.png){fig-align="center" width=80% .lightbox}
 
-
+## References
 
 
 
