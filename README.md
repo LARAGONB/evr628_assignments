@@ -95,4 +95,4 @@ And also, the total number of running ![figure4](results/img/run_plots_20251028.
 
 ## **Final assignment**
 
-The final step was to create an awesome presentation using Quarto. Here(https://jcvdav.github.io/EVR_628/) is mine. 
+The final step was to create an awesome presentation using Quarto. [Here](final_presentation.html) is mine. 
