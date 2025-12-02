@@ -3,6 +3,7 @@ title: "My Garmin® Data Analysis"
 subtitle: "Improving my data visualization skills using R"
 author: "Lina Aragón"
 date: today
+bibliography: references.bib
 format: 
   revealjs:
     theme: simple
@@ -13,7 +14,7 @@ format:
 ---
 
 ## Introduction {.smaller}
-* Smartwaches have been transformed into advanced health monitoring devices. 
+* Smartwaches have been transformed into advanced health monitoring devices [@kohler2024value; @kapogianni2025using]. 
 
 * Its multiple sensors allow them to monitor continuously multiple vital signs:
   + Heart rate
